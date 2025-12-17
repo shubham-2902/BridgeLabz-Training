@@ -11,5 +11,4 @@ int age = currentYear-birthyear;
 System.out.println(name+"'s"+" age  in "+currentYear+" is "+ age+".");
 
 }
-
 }
