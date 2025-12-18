@@ -24,6 +24,6 @@ public class IntOperation
         System.out.println(
                 "The results of Int Operations are " +
                 result1 + ", " + result2 + ", " + result3 + ", and " + result4
-        );
+        );// printed the result
     }
    }
