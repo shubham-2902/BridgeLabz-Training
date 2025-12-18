@@ -20,6 +20,6 @@ public class QuotientAndRemainder
                 "The Quotient is " + quotient +
                 " and Reminder is " + remainder +
                 " of two number " + number1 + " and " + number2
-        );
+        ); // printed the result
       }
   }
