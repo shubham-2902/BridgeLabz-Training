@@ -141,6 +141,23 @@ BridgeLabz-Training/
 👉 [Day 8 – String Handling](https://github.com/shubham-2902/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/String)
 
 ---
+## 📅 Day 9 – Extra String Handling Practice  
+**(Date: 24-Dec-2025)**
+
+- Practiced advanced String handling concepts:
+  - Revision of core String methods
+  - Character-wise processing
+  - Logical problem-solving using Strings
+-   Solved **extra String problems**, including:
+  - Scenario-based String questions
+  - Time-class String problems
+  - Additional practice problems 
+- Improved logical thinking and confidence in solving complex String-based questions.
+
+🔗 **Code Link:**  
+👉 [Day 9 – Advanced String Handling](https://github.com/shubham-2902/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/Extras)
+
+---
 
 ## ✅ Summary
 - Built strong fundamentals in **Git, GitHub, and Core Java**
