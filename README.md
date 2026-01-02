@@ -36,8 +36,9 @@ Each day built progressively on core OOP principles while following proper Git w
 - Movie Ticket Booking System  
 - Shopping Cart Simulation  
 
-🔗 **Code Link:**  
-👉 [Objects and Classes](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/classandobject)
+🔗 **Code Link:** 
+👉 [Objects and Classes ](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/classandobject)
+
 ---
 
 ## 📅 Day 2 – Constructors, Access Modifiers & OOP Practice  
@@ -70,8 +71,9 @@ Each day built progressively on core OOP principles while following proper Git w
 - Bank Account Management System  
 - Employee Records with Manager subclass  
 
-🔗 **Code Link:**  
-👉 [Constructors & Access Modifiers] (https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/constructors/level1)
+🔗 **Code Link:** 
+👉 [Constructor and Access Modifiers](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/constructors)
+
 ---
 
 ## 📅 Day 3 – Static, Final & Object Behavior  
