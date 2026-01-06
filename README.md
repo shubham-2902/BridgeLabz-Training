@@ -3,10 +3,8 @@ This branch serves as a dedicated space for my ongoing journey in mastering Data
 
 ---
 
-🗓 Day 1: Linked List (Singly, Doubly & Circular)  
-Date: 2 January 2026
-
----
+**🗓 Day 1: Linked List (Singly, Doubly & Circular)**  
+**Date: 2 January 2026**
 
 🔹 Topics Covered
 
@@ -23,8 +21,6 @@ Algorithmic Thinking
 - Applied traversal-based logic  
 - Compared node values and maintained counters  
 - Designed efficient solutions using linked list properties  
-
----
 
 ✅ Practice Summary
 
@@ -45,17 +41,13 @@ Circular Linked List
 - Online Ticket Reservation System  
 - Round Robin Scheduling Algorithm  
 
----
-
 🔗 Code link:  
-:point_right: Week 03 – [Linked List Programs](https://github.com/shubham-2902/BridgeLabz-Training/tree/dsa-practice/dsa-practice/gcr-codebase/JavaDSAPractice/src/linkedlist)
+👉 Week 03 – [Linked List Programs](https://github.com/shubham-2902/BridgeLabz-Training/tree/dsa-practice/dsa-practice/gcr-codebase/JavaDSAPractice/src/linkedlist)
 
 ---
 
-🗓 Day 2: Stack, Queue & Hashing  
-Date: 3 January 2026
-
----
+**🗓 Day 2: Stack, Queue & Hashing**  
+**Date: 3 January 2026**
 
 🔹 Topics Covered
 
@@ -82,8 +74,6 @@ Best Practices
 - Validated empty stack and queue operations  
 - Used auxiliary data structures for optimization  
 
----
-
 ✅ Practice Summary
 
 Solved **10 Stack, Queue, and HashMap–based problems**:
@@ -102,17 +92,13 @@ Hash Map & Hashing Problems
 - Custom Hash Map Implementation  
 - Two Sum Problem  
 
----
-
 🔗 Code link:  
-:point_right: Week 03 – [Stack, Queue & Hashing Programs](https://github.com/shubham-2902/BridgeLabz-Training/tree/dsa-practice/dsa-practice/gcr-codebase/JavaDSAPractice/src/stackandqueues)
+👉 Week 03 – [Stack, Queue & Hashing Programs](https://github.com/shubham-2902/BridgeLabz-Training/tree/dsa-practice/dsa-practice/gcr-codebase/JavaDSAPractice/src/stackandqueues)
 
 ---
 
-🗓 Day 3: Sorting Algorithms  
-Date: 5 January 2026
-
----
+**🗓 Day 3: Sorting Algorithms**  
+**Date: 5 January 2026**
 
 🔹 Topics Covered
 
@@ -137,8 +123,6 @@ Best Practices
 - Applied stable vs unstable sorting concepts  
 - Optimized performance using divide-and-conquer strategies  
 
----
-
 ✅ Practice Summary
 
 Solved **7 sorting-based problems** using different algorithms:
@@ -151,8 +135,5 @@ Solved **7 sorting-based problems** using different algorithms:
 - Heap Sort – Sort Job Applicants by Salary  
 - Counting Sort – Sort Student Ages  
 
----
-
 🔗 Code link:  
-:point_right:Week 03 – [Sorting Algorithms](https://github.com/shubham-2902/BridgeLabz-Training/tree/dsa-practice/dsa-practice/gcr-codebase/JavaDSAPractice/src/sortingalgorithm)
-
+👉 Week 03 – [Sorting Algorithms](https://github.com/shubham-2902/BridgeLabz-Training/tree/dsa-practice/dsa-practice/gcr-codebase/JavaDSAPractice/src/sortingalgorithm)
