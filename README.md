@@ -196,4 +196,116 @@ before implementation.
 - Built a strong foundation in Object-Oriented Programming  
 - Applied OOP concepts using real-world Java programs  
 - Improved code structure, readability, and design clarity  
-- Practiced consistent Git and GitHub workflows  
+- Practiced consistent Git and GitHub workflows
+
+
+
+## ☕ Java OOPS – Scenario Based Practice
+
+---
+
+## 📅 Day 1 – Real-World OOPS Scenarios  
+**Date: 2-Jan-2026**
+
+### Topics Covered
+- Classes, Objects, Variables & Methods  
+- Constructors and Constructor Overloading  
+- Access Modifiers and Encapsulation  
+- Interfaces and Abstraction  
+- Inheritance and Polymorphism  
+- Operator-based business logic  
+
+### Problems Solved
+- **Hospital Patient Management System**  
+  Hospital module to register patients, assign doctors, and manage billing.  
+  Focused on encapsulation, inheritance, and interface-based billing logic.
+
+- **Vehicle Rental Application**  
+  System to rent bikes, cars, and trucks to customers.  
+  Implemented vehicle hierarchy and polymorphic rent calculation.
+
+- **University Course Enrollment System**  
+  Platform for student enrollment and faculty grading.  
+  Applied inheritance, encapsulated GPA handling, and grading interfaces.
+
+- **E-Wallet Application**  
+  Digital wallet for loading money and transferring funds.  
+  Ensured secure balance handling and polymorphic transaction logic.
+
+- **Smart Home Automation System**  
+  System to control smart devices like lights, fans, and ACs.  
+  Used appliance inheritance and interface-driven device control.
+
+### Practice Summary
+- Designed real-world Java systems using OOPS principles  
+- Applied encapsulation to protect sensitive data  
+- Used inheritance for hierarchical modeling  
+- Implemented interfaces to achieve abstraction  
+- Leveraged polymorphism for dynamic behavior  
+
+🔗 **Code Link:**  
+👉 [Day 1 – OOPS Scenarios](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day1)
+
+---
+
+## 📅 Day 2 – Advanced OOPS & Polymorphism  
+**Date: 3-Jan-2026**
+
+### Topics Covered
+- Interface-driven architecture  
+- Secure data handling using encapsulation  
+- Runtime polymorphism  
+- Operator-based calculations  
+- Backend-oriented class design  
+
+### Problems Solved
+- **CabbyGo – Ride-Hailing Application**  
+  Backend logic for managing vehicles, drivers, and ride booking.  
+  Implemented vehicle-type polymorphism and operator-based fare calculation.
+
+- **MyBank – Customer Account Management System**  
+  Core banking module for accounts, deposits, and interest calculation.  
+  Applied account inheritance and polymorphic interest logic.
+
+### Practice Summary
+- Built backend logic for scalable applications  
+- Applied polymorphism across vehicle and account types  
+- Encapsulated sensitive data such as fare, balance, and ratings  
+- Implemented clean separation of responsibilities  
+
+🔗 **Code Link:**  
+👉 [Day 2 – Advanced OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day2)
+
+---
+
+## 📅 Day 3 – Enterprise-Style OOPS Applications  
+**Date: 5-Jan-2026**
+
+### Topics Covered
+- Base class design and inheritance  
+- Interface-based operations  
+- Secure state management  
+- Operator-based calculations  
+- Polymorphic method implementations  
+
+### Problems Solved
+- **CampusConnect – College Information System**  
+  Academic portal to manage students, faculty, and course enrollment.  
+  Used base class inheritance, interface-driven actions, and GPA calculation.
+
+- **SwiftCart – Grocery Shopping Application**  
+  Backend cart and checkout system for an online grocery platform.  
+  Implemented product inheritance and polymorphic discount application.
+
+### Practice Summary
+- Modeled enterprise-level Java applications  
+- Applied strong encapsulation for grades and prices  
+- Used interfaces for extensibility  
+- Implemented polymorphic behaviors for users and products  
+
+🔗 **Code Link:**  
+👉 [Day 3 – Enterprise OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day3)
+
+---
+
+
