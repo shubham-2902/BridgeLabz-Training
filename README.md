@@ -308,4 +308,43 @@ before implementation.
 
 ---
 
+## 📅 Day 4 – Advanced Real-World OOPS Applications  
+**Date: 6-Jan-2026**
+
+### Topics Covered
+- Base class design and inheritance  
+- Interface-driven behavior modeling  
+- Strong encapsulation of sensitive data  
+- Constructor overloading and flexible initialization  
+- Operator-based calculations and progress tracking  
+- Runtime polymorphism across use cases  
+
+### Problems Solved
+- **EduMentor – Personalized Learning Platform**  
+  Learning platform to manage courses, quizzes, and learner progress.  
+  Applied inheritance for users, encapsulated quiz data, and polymorphic certificate generation.
+
+- **FitTrack – Your Personal Fitness Tracker**  
+  Fitness tracking system for workouts, calories, and daily goals.  
+  Used workout inheritance, interface-based tracking, and polymorphic calorie calculation.
+
+- **PetPal – Virtual Pet Care App**  
+  Virtual pet care system supporting multiple pet types and interactions.  
+  Implemented pet inheritance, encapsulated mood and hunger, and polymorphic behavior.
+
+- **EventEase – Event Management Platform**  
+  Event booking and scheduling system for different event types.  
+  Applied event inheritance, interface-based scheduling, and secure cost calculations.
+
+### Practice Summary
+- Designed complex real-world systems using OOPS principles  
+- Applied encapsulation to protect internal state and sensitive data  
+- Modeled behavior using interfaces and polymorphism  
+- Used operators for scoring, tracking, and pricing logic  
+- Strengthened object-oriented design and modular thinking  
+
+🔗 **Code Link:**  
+👉 [Day 4 – Advanced OOPS Applications](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day4)
+
+
 
