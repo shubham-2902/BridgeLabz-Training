@@ -12,19 +12,23 @@ This repository documents my **day-wise learning progress** in Git, GitHub, and 
 - Understood the importance of version control systems.
 
 ### 📂 Repository Structure
+
 BridgeLabz-Training/
 │
 ├── core-java-practice/
-│ ├── gcr-codebase/
-│ │ ├── arrays/
-│ │ ├── builtIn-functions/
-│ │ ├── control-flow/
-│ │ ├── java-methods/
-│ │ ├── programming-elements/
-│ │ ├── string-handling/
-│ │ └── strings/
-│ ├── leet-code-codebase/
-│ └── scenario-based/
+│   │
+│   ├── gcr-codebase/
+│   │   ├── arrays/
+│   │   ├── builtIn-functions/
+│   │   ├── control-flow/
+│   │   ├── java-methods/
+│   │   ├── programming-elements/
+│   │   ├── string-handling/
+│   │   └── strings/
+│   │
+│   ├── leet-code-codebase/
+│   │
+│   └── scenario-based-codebase/
 │
 └── README.md
 
@@ -157,6 +161,42 @@ BridgeLabz-Training/
 🔗 **Code Link:**  
 👉 [Day 9 – Advanced String Handling](https://github.com/shubham-2902/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/Extras)
 
+---
+## 📅 Day 10– Extra Scenario based question based on core java concepts 
+**(Date: 26-Dec-2025)**
+---
+
+## 📘 Scenario-Based Core Java Programs
+
+| No. | Program Name | Scenario Description | Core Concepts Practiced |
+|----|-------------|---------------------|------------------------|
+| 1 | BMI Fitness Tracker | Calculates BMI based on user height and weight to assess fitness level | Variables, Operators, Conditional Statements |
+| 2 | Bus Attendance | Tracks daily attendance of passengers in a bus | Loops, Counters, Conditional Logic |
+| 3 | Bus Route Tracker | Simulates tracking of bus routes and stops | Arrays, Iteration, User Input |
+| 4 | Coffee Counter | Counts coffee sales and calculates total revenue | Loops, Arithmetic Operations |
+| 5 | Currency Exchange | Converts currency based on exchange rates | Operators, User Input, Conditions |
+| 6 | Digital Watch | Simulates a digital clock display | Loops, Time Calculations |
+| 7 | Election Booth Manager | Manages voting eligibility and vote counting | Conditional Statements, Counters |
+| 8 | Fitness Challenge Tracker | Tracks fitness challenge progress over days | Loops, Aggregation Logic |
+| 9 | Library Fine Calculator | Calculates fine based on late book returns | Conditional Logic, Arithmetic |
+| 10 | Lucky Draw | Implements a simple lucky draw system | Random Numbers, Conditions |
+| 11 | Metro Smart Card | Simulates metro card balance and fare deduction | Variables, Operators, Conditions |
+| 12 | Movie Ticket Booking | Calculates ticket cost based on seat type and quantity | Conditional Logic, Arithmetic |
+| 13 | Name | Basic program to practice string input and output | Strings, Input/Output |
+| 14 | Number Guessing | Guess-the-number game with user attempts | Loops, Conditions, Random Numbers |
+| 15 | Online Quiz App | Simulates a quiz system with score calculation | Conditions, Counters |
+| 16 | Parking System | Calculates parking charges based on duration | Operators, Conditional Statements |
+
+🔗 **Code Link:**  
+👉 [Day 10 – Extra Scenario based question](https://github.com/shubham-2902/BridgeLabz-Training/tree/core-java-practice/scenario-based-codebase)
+
+---
+
+## 🎯 Learning Outcomes
+- Strengthened understanding of Core Java fundamentals  
+- Practiced scenario-based problem solving  
+- Improved logical thinking using conditions and loops  
+- Built confidence in writing structured Java programs  
 ---
 
 ## ✅ Summary
