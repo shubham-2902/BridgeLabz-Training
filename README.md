@@ -11,8 +11,9 @@ This repository documents my **day-wise learning progress** in Git, GitHub, and 
 - Created and set up a GitHub repository.
 - Understood the importance of version control systems.
 
-### 📂 Repository Structure
+## 📂 Repository Structure
 
+```
 BridgeLabz-Training/
 │
 ├── core-java-practice/
@@ -31,6 +32,7 @@ BridgeLabz-Training/
 │   └── scenario-based-codebase/
 │
 └── README.md
+```
 
 
 - Learned basic Git commands: `init`, `clone`, `add`, `commit`, `push`
