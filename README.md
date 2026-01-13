@@ -15,7 +15,7 @@ This repository documents my **day-wise learning progress** in Git, GitHub, and 
 - Installed and configured Git.
 - Created and set up a GitHub repository.
 - Understood the importance of version control systems.
-
+```
 ### 📂 Repository Structure
 BridgeLabz-Training/
 │
@@ -32,7 +32,7 @@ BridgeLabz-Training/
 │ └── scenario-based/
 │
 └── README.md
-
+```
 
 - Learned basic Git commands: `init`, `clone`, `add`, `commit`, `push`
 - Successfully pushed files to the remote repository.
@@ -656,8 +656,247 @@ Solved **7 sorting-based problems** using different algorithms:
 🔗 **Code Link:**  
 👉 [Java OOPS – Day 3](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day3)
 
+---
+
+## 📅 Day 4 –  String builder and buffer, Linear Search, Binary Search and InputStreamReader
+**Date: 6-Jan-2026**
+
+### 🔹 Topics Overview
+This day focused on strengthening Java fundamentals related to **string manipulation**, **input/output streams**, and **searching algorithms**.  
+Emphasis was placed on understanding performance differences between mutable string classes, efficient file handling, and applying linear and binary search techniques to solve real-world problems.
+
+### 🔹 Practice Summary
+
+| Category | Problem | Description |
+|--------|--------|------------|
+| StringBuilder | Reverse a String | Reversed a string using `StringBuilder.reverse()` |
+| StringBuilder | Remove Duplicates | Removed duplicate characters while maintaining order |
+| StringBuffer | Efficient Concatenation | Concatenated an array of strings efficiently |
+| StringBuffer | Performance Comparison | Compared `StringBuffer` vs `StringBuilder` for large concatenations |
+| FileReader | Read File Line by Line | Read and printed file contents using `FileReader` and `BufferedReader` |
+| FileReader | Word Occurrence Count | Counted occurrences of a specific word in a file |
+| InputStreamReader | Byte to Char Conversion | Converted byte stream to character stream using `InputStreamReader` |
+| InputStreamReader | Console Input to File | Read user input and wrote it to a file until exit command |
+| Challenge | API Performance Comparison | Compared `StringBuilder`, `StringBuffer`, `FileReader`, and `InputStreamReader` |
+| Linear Search | First Negative Number | Found index of the first negative number in an array |
+| Linear Search | Word Search in Sentences | Searched for a word in a list of sentences |
+| Binary Search | Rotation Point | Found smallest element in a rotated sorted array |
+| Binary Search | Peak Element | Found a peak element using binary search |
+| Binary Search | Search in 2D Matrix | Searched a target value in a sorted 2D matrix |
+| Binary Search | First & Last Occurrence | Found first and last occurrence of an element |
+| Challenge | Missing Positive & Target Index | Linear search for missing positive and binary search for target |
+
+---
+
+🔗 Code link:  
+👉 Week 03 – [Linear Search and Binary Search](https://github.com/shubham-2902/BridgeLabz-Training/tree/dsa-practice/dsa-practice/gcr-codebase/JavaDSAPractice/src/stringbufferandbuilderpluslinearsearchandbinarysearch)
+
+---
+
+## 📅 Day 4 – Advanced Real-World OOPS Applications  
+**Date: 6-Jan-2026**
+
+### Topics Covered
+- Base class design and inheritance  
+- Interface-driven behavior modeling  
+- Strong encapsulation of sensitive data  
+- Constructor overloading and flexible initialization  
+- Operator-based calculations and progress tracking  
+- Runtime polymorphism across use cases  
+
+### Problems Solved
+- **EduMentor – Personalized Learning Platform**  
+  Learning platform to manage courses, quizzes, and learner progress.  
+  Applied inheritance for users, encapsulated quiz data, and polymorphic certificate generation.
+
+- **FitTrack – Your Personal Fitness Tracker**  
+  Fitness tracking system for workouts, calories, and daily goals.  
+  Used workout inheritance, interface-based tracking, and polymorphic calorie calculation.
+
+- **PetPal – Virtual Pet Care App**  
+  Virtual pet care system supporting multiple pet types and interactions.  
+  Implemented pet inheritance, encapsulated mood and hunger, and polymorphic behavior.
+
+- **EventEase – Event Management Platform**  
+  Event booking and scheduling system for different event types.  
+  Applied event inheritance, interface-based scheduling, and secure cost calculations.
+
+### Practice Summary
+- Designed complex real-world systems using OOPS principles  
+- Applied encapsulation to protect internal state and sensitive data  
+- Modeled behavior using interfaces and polymorphism  
+- Used operators for scoring, tracking, and pricing logic  
+- Strengthened object-oriented design and modular thinking
+
+  🔗 **Code Link:**  
+👉 [Day 4 – Advance OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day4)
+
+---
+## 📅 Day 5 – Algorithm's Runtime Analysis & Big-O Notation
+**Date: 7-Jan-2026**
+
+### 🔹 Topics Overview
+This day focused on **analyzing time complexity and performance trade-offs** across different algorithms, data structures, and Java utilities.  
+The goal was to understand how algorithm choice impacts execution time and scalability when working with large datasets.
+
+---
+
+### 🔹 Practice Summary
+
+| No. | Problem | Comparison Focus | Key Observation |
+|----|--------|-----------------|----------------|
+| 1 | Search in Large Dataset | Linear Search vs Binary Search | Binary Search scales better for large, sorted datasets |
+| 2 | Sorting Large Data | Bubble vs Merge vs Quick Sort | Bubble Sort is impractical; Merge & Quick Sort are efficient |
+| 3 | String Concatenation Performance | String vs StringBuilder vs StringBuffer | StringBuilder/StringBuffer outperform String significantly |
+| 4 | Large File Reading Efficiency | FileReader vs InputStreamReader | InputStreamReader performs better for large files |
+| 5 | Fibonacci Computation | Recursive vs Iterative | Iterative approach is faster and memory-efficient |
+| 6 | Searching with Data Structures | Array vs HashSet vs TreeSet | HashSet offers fastest lookup; TreeSet preserves order |
+
+---
+🔗 Code link:  
+👉 Week 03 – [Algorithm's Runtime Analysis](https://github.com/shubham-2902/BridgeLabz-Training/tree/dsa-practice/dsa-practice/gcr-codebase/JavaDSAPractice/src/complexityanalysis)
+
+---
+## 📅 Day 5 – Scenario-Based OOPS Problems  
+**Date: 7-Jan-2026**
+
+### Topics Covered
+- Interface-driven business logic  
+- Secure encapsulation of sensitive data  
+- Constructor overloading for flexible object creation  
+- Operator-based calculations  
+- Inheritance for domain-specific extensions  
+- Runtime polymorphism for rule variations  
+
+### Problems Solved
+- **LoanBuddy – Loan Approval Automation**  
+  Automated loan approval module to evaluate eligibility and calculate EMIs.  
+  Implemented loan inheritance, encapsulated approval logic, and polymorphic EMI calculation.
+
+- **BookBazaar – Digital Bookstore System**  
+  Backend logic for managing books, orders, and discounts.  
+  Used book inheritance, interface-based discount handling, and secure inventory updates.
+
+- **ParkEase – Smart Parking Management System**  
+  Smart parking solution to assign slots, calculate charges, and track availability.  
+  Applied vehicle inheritance, encapsulated slot state, and polymorphic charge calculation.
+
+### Practice Summary
+- Designed real-world applications using OOPS principles  
+- Applied encapsulation to protect internal state and business rules  
+- Used interfaces to standardize workflows and calculations  
+- Implemented inheritance and polymorphism for extensibility  
+- Improved scenario-based object modeling skills  
+
+🔗 **Code Link:**  
+👉 [Day 5 – Scenario-Based OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day5)
+
+---
+
+## 📅 Day 6 – Scenario-Based OOPS Problems  
+**Date: 8-Jan-2026**
+
+### Topics Covered
+- Inventory and booking workflow modeling  
+- Interface-driven operations  
+- Strong encapsulation of sensitive data  
+- Constructor-based object initialization  
+- Operator-based calculations and adjustments  
+- Inheritance and runtime polymorphism  
+
+### Problems Solved
+- **MediStore – Pharmacy Inventory & Sales System**  
+  Application to manage medicine inventory, sales, and expiry tracking.  
+  Implemented medicine inheritance, encapsulated stock data, and polymorphic expiry checks.
+
+- **TourMate – Travel Itinerary Planner**  
+  Travel planning system to manage trips, bookings, and budgets.  
+  Applied trip inheritance, interface-based booking, and polymorphic booking logic
 
 
+🔗 **Code Link:**  
+👉 [Day 6 – Scenario-Based OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day6)
+
+---
+## 📅 Day 7 – Scenario-Based OOPS Problems  
+**Date: 9-Jan-2026**
+
+### Topics Covered
+- Marketplace and ordering workflow design  
+- Interface-based purchase and order handling  
+- Secure encapsulation of sensitive business logic  
+- Constructor-based object initialization  
+- Operator-based price, balance, and progress calculations  
+- Inheritance and runtime polymorphism  
+
+### Problems Solved
+- **Artify – Digital Art Marketplace**  
+  Platform for selling, licensing, and subscribing to digital artwork.  
+  Implemented artwork inheritance, protected licensing logic, and polymorphic licensing behavior.
+
+- **FoodLoop – Restaurant Ordering System**  
+  Food ordering application for placing and managing restaurant orders.  
+  Applied food item inheritance, encapsulated stock handling, and polymorphic discount logic.
+
+- **SkillForge – Online Learning Portal**  
+  Learning platform for course enrollment, progress tracking, and certification.  
+  Used user inheritance, interface-based certification, and polymorphic certificate generation.
+
+### Practice Summary
+- Designed marketplace and ordering-based applications using OOPS  
+- Applied encapsulation to protect pricing, licensing, and review data  
+- Used interfaces to standardize purchasing, ordering, and certification  
+- Implemented inheritance and polymorphism for extensible behavior  
+- Strengthened real-world scenario modeling skills  
+
+🔗 **Code Link:**  
+👉 [Day 7 – Scenario-Based OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day7)
+
+---
+📌. Scenario-Based Data Structures Practice 
+---
+## 📅 Day 1– Scenario-Based Data Structures Practice 
+**Date: 10-Jan-2026**
+
+### 🔹 Topics Overview
+This day focused on applying **Data Structures in real-world scenarios**, combining Linked Lists, Stacks, Queues, HashMaps, and utility functions.  
+The emphasis was on modeling realistic workflows while ensuring efficient data access, traversal, and updates.
+
+---
+
+### 🔹 Practice Summary
+
+| No. | Problem | Data Structures Used | Scenario Description |
+|----|--------|---------------------|----------------------|
+| 1 | BookShelf – Library Organizer | HashMap, LinkedList, HashSet | Managed genre-wise book catalogs with efficient insert, delete, and duplicate control |
+| 2 | BrowserBuddy – Tab History Manager | Doubly Linked List, Stack | Implemented browser navigation with back/forward history and tab restoration |
+| 3 | AmbulanceRoute – Emergency Patient Navigation | Circular Linked List | Simulated ambulance routing across hospital units in a circular path |
+---
+  📌. Code link:  
+👉  [Day 01](https://github.com/shubham-2902/BridgeLabz-Training/tree/dsa-practice/dsa-practice/scenario-based-codebase/JavaDSAScenarioBasedQ/src/com/day1)
+
+---
+
+## 📅 Day 2 – Scenario-Based Data Structures Practice  
+**Date: 12-Jan-2026**
+
+### 🔹 Topics Overview
+This day focused on solving **real-world system simulations** using queues, stacks, linked lists, and hash-based data structures.  
+The problems emphasized managing dynamic flows, navigation, history tracking, and priority-based processing.
+
+---
+
+### 🔹 Practice Summary
+
+| No. | Problem | Data Structures Used | Scenario Description |
+|----|--------|---------------------|----------------------|
+| 4 | CallCenter – Customer Queue Manager | Queue, PriorityQueue, HashMap | Managed incoming customer calls with VIP priority handling and call tracking |
+| 5 | TrainCompanion – Compartment Navigation System | Doubly Linked List | Enabled forward/backward navigation and dynamic compartment management |
+| 6 | TextEditor – Undo/Redo Functionality | Stack | Implemented undo and redo operations using separate stacks |
+| 7 | TrafficManager – Roundabout Vehicle Flow | Circular Linked List, Queue | Simulated vehicle movement and waiting queues in a roundabout |
+---
+ 📌. Code link:  
+👉  [Day 02](https://github.com/shubham-2902/BridgeLabz-Training/tree/dsa-practice/dsa-practice/scenario-based-codebase/JavaDSAScenarioBasedQ/src/com/day2)
 
 
 
