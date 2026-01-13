@@ -343,6 +343,10 @@ before implementation.
 - Used operators for scoring, tracking, and pricing logic  
 - Strengthened object-oriented design and modular thinking
 
+  🔗 **Code Link:**  
+👉 [Day 4 – Advance OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day4)
+
+
 
  ---
  ## 📅 Day 5 – Scenario-Based OOPS Problems  
