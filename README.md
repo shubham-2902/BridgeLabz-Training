@@ -343,6 +343,10 @@ before implementation.
 - Used operators for scoring, tracking, and pricing logic  
 - Strengthened object-oriented design and modular thinking
 
+  🔗 **Code Link:**  
+👉 [Day 4 – Advance OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day4)
+
+
 
  ---
  ## 📅 Day 5 – Scenario-Based OOPS Problems  
@@ -378,6 +382,68 @@ before implementation.
 
 🔗 **Code Link:**  
 👉 [Day 5 – Scenario-Based OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day5)
+
+---
+## 📅 Day 6 – Scenario-Based OOPS Problems  
+**Date: 8-Jan-2026**
+
+### Topics Covered
+- Inventory and booking workflow modeling  
+- Interface-driven operations  
+- Strong encapsulation of sensitive data  
+- Constructor-based object initialization  
+- Operator-based calculations and adjustments  
+- Inheritance and runtime polymorphism  
+
+### Problems Solved
+- **MediStore – Pharmacy Inventory & Sales System**  
+  Application to manage medicine inventory, sales, and expiry tracking.  
+  Implemented medicine inheritance, encapsulated stock data, and polymorphic expiry checks.
+
+- **TourMate – Travel Itinerary Planner**  
+  Travel planning system to manage trips, bookings, and budgets.  
+  Applied trip inheritance, interface-based booking, and polymorphic booking logic
+
+
+🔗 **Code Link:**  
+👉 [Day 6 – Scenario-Based OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day6)
+
+
+---
+## 📅 Day 7 – Scenario-Based OOPS Problems  
+**Date: 9-Jan-2026**
+
+### Topics Covered
+- Marketplace and ordering workflow design  
+- Interface-based purchase and order handling  
+- Secure encapsulation of sensitive business logic  
+- Constructor-based object initialization  
+- Operator-based price, balance, and progress calculations  
+- Inheritance and runtime polymorphism  
+
+### Problems Solved
+- **Artify – Digital Art Marketplace**  
+  Platform for selling, licensing, and subscribing to digital artwork.  
+  Implemented artwork inheritance, protected licensing logic, and polymorphic licensing behavior.
+
+- **FoodLoop – Restaurant Ordering System**  
+  Food ordering application for placing and managing restaurant orders.  
+  Applied food item inheritance, encapsulated stock handling, and polymorphic discount logic.
+
+- **SkillForge – Online Learning Portal**  
+  Learning platform for course enrollment, progress tracking, and certification.  
+  Used user inheritance, interface-based certification, and polymorphic certificate generation.
+
+### Practice Summary
+- Designed marketplace and ordering-based applications using OOPS  
+- Applied encapsulation to protect pricing, licensing, and review data  
+- Used interfaces to standardize purchasing, ordering, and certification  
+- Implemented inheritance and polymorphism for extensible behavior  
+- Strengthened real-world scenario modeling skills  
+
+🔗 **Code Link:**  
+👉 [Day 7 – Scenario-Based OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day7)
+
 
 
 
