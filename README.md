@@ -444,6 +444,42 @@ before implementation.
 🔗 **Code Link:**  
 👉 [Day 7 – Scenario-Based OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day7)
 
+---
+## 📅 Day 8 – Scenario-Based OOPS Problems  
+**Date: 12-Jan-2026**
+
+### Topics Covered
+- Device and user-centric class design  
+- Interface-driven control and analysis  
+- Secure encapsulation of sensitive state and logs  
+- Constructor-based object initialization  
+- Operator-based calculations and reporting  
+- Inheritance and runtime polymorphism  
+
+### Problems Solved
+- **HomeNest – Smart Home Device Manager**  
+  System to manage and control smart home devices like lights, cameras, and locks.  
+  Applied device inheritance, interface-based controls, and polymorphic reset behavior.
+
+- **BudgetWise – Personal Finance Tracker**  
+  Application to track income, expenses, and category-wise budgets.  
+  Used budget inheritance, encapsulated expense data, and polymorphic report generation.
+
+- **GameBox – Mobile Game Distribution Platform**  
+  Platform for distributing and managing mobile games with demos and purchases.  
+  Implemented game inheritance, protected user data, and polymorphic demo behavior.
+
+### Practice Summary
+- Designed real-world applications using core OOPS principles  
+- Applied encapsulation to protect device state, finance data, and user assets  
+- Used interfaces to standardize control, analysis, and download operations  
+- Implemented inheritance and polymorphism for extensible behavior  
+- Strengthened scenario-based object modeling skills  
+
+🔗 **Code Link:**  
+👉 [Day 8 – Scenario-Based OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day8)
+
+
 
 
 
