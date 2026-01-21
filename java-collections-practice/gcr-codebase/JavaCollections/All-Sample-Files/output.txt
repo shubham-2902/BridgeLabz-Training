@@ -1,0 +1,26 @@
+legacy classes in java are older data structure classes (like vector, hashtable, stack, dictionary, properties) from early java versions that were made to work with the modern java collections framework (jcf) for backward compatibility, though newer, more efficient alternatives (like arraylist, hashmap) exist in the jcf for most modern use cases. they provide similar functionality but are often synchronized (thread-safe) and can be less performant than their modern counterparts, which offer better control over synchronization.
+in java, legacy classes are those that existed before the introduction of the modern collections framework in jdk 1.2. these classes were later retrofitted to implement newer interfaces like list or map, but they remain distinct due to their built-in synchronization (thread safety), which often makes them slower than their modern counterparts like arraylist or hashmap. 
+below is text information regarding the five primary legacy classes and one legacy interface.
+1. vector
+description: a growable, dynamic array similar to arraylist.
+key feature: all its methods are synchronized, making it thread-safe but generally slower than arraylist.
+legacy methods: includes methods like addelement(), elementat(), and firstelement() which are not part of the standard list interface. 
+2. stack
+description: a subclass of vector that implements a standard last-in-first-out (lifo) stack.
+standard operations: provides push(), pop(), peek(), empty(), and search().
+modern alternative: it is now generally recommended to use the deque interface (e.g., arraydeque) for stack operations. 
+3. hashtable
+description: a key-value storage structure that implements the map interface.
+constraints: unlike hashmap, it does not allow null keys or null values.
+modern alternative: hashmap is preferred for single-threaded use; concurrenthashmap is preferred for high-concurrency environments. 
+4. properties
+description: a subclass of hashtable used to maintain lists of values where both keys and values are strings.
+common use: frequently used for configuration files (loading from and saving to .properties files).
+advantage: allows for default values if a key is not found. 
+5. dictionary
+description: an abstract superclass for any class that maps keys to values, such as hashtable.
+status: it is considered obsolete and has been entirely superseded by the map interface. 
+6. enumeration (interface)
+description: a legacy interface used to iterate through a collection of objects.
+methods: only defines hasmoreelements() and nextelement().
+modern alternative: almost entirely replaced by the iterator interface, which is more powerful and supports element removal. 
