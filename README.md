@@ -1,4 +1,4 @@
-# 📘 Module 2 – Object-Oriented Programming (OOPs) in Java
+# 📘 Week 2 – Object-Oriented Programming (OOPs) in Java
 
 This week focused on strengthening Object-Oriented Programming skills in Java through
 **hands-on practice**, **real-world problem modeling**, and **structured code organization**.
