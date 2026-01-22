@@ -479,6 +479,47 @@ before implementation.
 🔗 **Code Link:**  
 👉 [Day 8 – Scenario-Based OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day8)
 
+---
+## 📅 Day 9 – Scenario-Based OOPS Problems  
+**Date: 13-Jan-2026**
+
+### Problems Solved
+- **PayXpress – Utility Bill Payment System**  
+  Manages utility bill payments, reminders, and payment tracking using OOPS principles.
+
+- **Bird Sanctuary – Wildlife Behavior Management System**  
+  Models different bird types and behaviors using inheritance and polymorphism.
+
+🔗 **Code Link:**  
+👉 [Day 9 – Scenario-Based OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day9)
+
+---
+## 📅 Day 10 – Scenario-Based OOPS Problems  
+**Date: 17-Jan-2026**
+
+### Problems Solved
+- **GeoMeasure – Line Comparison System**  
+  Compares lengths of line segments using coordinates, constructors, methods, and encapsulation.
+
+- **Bag-n-Ball Organizer**  
+  Toy storage system designed using classes and methods to organize and manage items efficiently.
+
+🔗 **Code Link:**  
+👉 [Day 10 – Scenario-Based OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day10)
+
+---
+## 📅 Day 11 – Scenario-Based OOPS Problems  
+**Date: 19-Jan-2026**
+
+### Problems Solved
+- **Address Book System**  
+  Manages contacts with add, edit, delete, search, and sorted display functionality using OOPS and collections.
+
+🔗 **Code Link:**  
+👉 [Day 11 – Scenario-Based OOPS](https://github.com/shubham-2902/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-based-codebase/JavaOopsScenarioBased/src/com/day11)
+
+
+
 
 
 
