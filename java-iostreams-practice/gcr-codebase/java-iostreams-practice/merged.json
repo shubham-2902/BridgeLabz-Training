@@ -1,0 +1,40 @@
+{
+  "appName" : "Student Management System",
+  "version" : 1.0,
+  "active" : true,
+  "lastUpdated" : null,
+  "email" : "rahul@gmail.com",
+  "admin" : {
+    "id" : 1,
+    "name" : "Rahul",
+    "email" : "rahul@gmail.com"
+  },
+  "students" : [ {
+    "id" : 101,
+    "name" : "Anita",
+    "age" : 20,
+    "subjects" : [ {
+      "name" : "Math",
+      "marks" : 85
+    }, {
+      "name" : "Science",
+      "marks" : 90
+    } ]
+  }, {
+    "id" : 102,
+    "name" : "Vikram",
+    "age" : 22,
+    "subjects" : [ {
+      "name" : "Math",
+      "marks" : 78
+    }, {
+      "name" : "Science",
+      "marks" : 88
+    } ]
+  } ],
+  "settings" : {
+    "theme" : "dark",
+    "notifications" : true,
+    "languages" : [ "English", "Hindi" ]
+  }
+}
