@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Ravi",
+    "maths": 80,
+    "science": 70,
+    "english": 90,
+    "total": 240,
+    "average": 80.0,
+    "grade": "A"
+  },
+  {
+    "name": "Anita",
+    "maths": 60,
+    "science": 65,
+    "english": 75,
+    "total": 200,
+    "average": 66.66666666666667,
+    "grade": "B"
+  },
+  {
+    "name": "Raj",
+    "maths": 50,
+    "science": 40,
+    "english": 30,
+    "total": 120,
+    "average": 40.0,
+    "grade": "C"
+  }
+]
