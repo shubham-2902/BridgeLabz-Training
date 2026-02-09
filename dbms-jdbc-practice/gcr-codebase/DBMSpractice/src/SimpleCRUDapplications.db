@@ -1,0 +1,128 @@
+Exercise 1: Simple CRUD Application
+
+// Created a database practice-db;
+// Created a Table
+
+> CREATE TABLE employees(
+    -> id INT PRIMARY KEY AUTO_INCREMENT,
+    -> name VARCHAR(50),
+    -> salary DOUBLE,
+    -> department VARCHAR(50)
+    -> );
+
+
+mysql>  show tables from practice_db;
++-----------------------+
+| Tables_in_practice_db |
++-----------------------+
+| employees             |
++-----------------------+
+1 row in set (0.00 sec)
+
+mysql> DESC EMPLOYEES;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | int         | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(50) | YES  |     | NULL    |                |
+| salary     | double      | YES  |     | NULL    |                |
+| department | varchar(50) | YES  |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+
+------------------------------------------*******************************--------------------------------------
+
+// • Add employee
+// • View all employees
+   
+mysql> INSERT INTO employees (name, salary, department) VALUES
+    -> ('Rahul', 45000, 'IT'),
+    -> ('Anita', 50000, 'HR'),
+    -> ('Ravi', 55000, 'Finance'),
+    -> ('Meena', 48000, 'Sales');
+
+
+mysql> SELECT * FROM EMPLOYEES;
++----+-------+--------+------------+
+| id | name  | salary | department |
++----+-------+--------+------------+
+|  1 | Rahul |  45000 | IT         |
+|  2 | Anita |  50000 | HR         |
+|  3 | Ravi  |  55000 | Finance    |
+|  4 | Meena |  48000 | Sales      |
++----+-------+--------+------------+
+
+------------------------------------------*******************************--------------------------------------
+
+// • Update employee salary
+
+mysql> UPDATE employees
+    -> SET salary = 55000,
+    ->     department = 'Sales',
+    ->     name = 'Meena Singh'
+    -> WHERE id = 4;
+
+mysql> SELECT * FROM EMPLOYEES;
++----+-------------+--------+------------+
+| id | name        | salary | department |
++----+-------------+--------+------------+
+|  1 | Rahul       |  45000 | IT         |
+|  2 | Anita       |  50000 | HR         |
+|  3 | Ravi        |  55000 | Finance    |
+|  4 | Meena Singh |  55000 | Sales      |
++----+-------------+--------+------------+
+
+
+------------------------------------------*******************************--------------------------------------
+
+// • Delete employee
+
+mysql> delete FROM employees
+    -> where id =3;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM EMPLOYEES;
++----+-------------+--------+------------+
+| id | name        | salary | department |
++----+-------------+--------+------------+
+|  1 | Rahul       |  45000 | IT         |
+|  2 | Anita       |  50000 | HR         |
+|  4 | Meena Singh |  55000 | Sales      |
++----+-------------+--------+------------+
+3 rows in set (0.00 sec)
+
+mysql>
+
+mysql> delete FROM employees
+    -> where id =3;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM EMPLOYEES;
++----+-------------+--------+------------+
+| id | name        | salary | department |
++----+-------------+--------+------------+
+|  1 | Rahul       |  45000 | IT         |
+|  2 | Anita       |  50000 | HR         |
+|  4 | Meena Singh |  55000 | Sales      |
++----+-------------+--------+------------+
+3 rows in set (0.00 sec)
+
+mysql>
+
+
+------------------------------------------*******************************--------------------------------------
+
+
+//• Search employee by name
+
+
+mysql> SELECT * FROM EMPLOYEES
+    -> WHERE NAME = 'Meena Singh';
++----+-------------+--------+------------+
+| id | name        | salary | department |
++----+-------------+--------+------------+
+|  4 | Meena Singh |  55000 | Sales      |
++----+-------------+--------+------------+
+1 row in set (0.01 sec)
+
+mysql>
+
