@@ -1,0 +1,82 @@
+-- 2. Doctor Management
+-- UC-2.1: Add Doctor Profile
+
+
+mysql> ALTER TABLE doctors
+    -> add contact VARCHAR(15),
+    -> ADD consultation_fee DECIMAL(10,2),
+    -> ADD is_active BOOLEAN DEFAULT TRUE;
+Query OK, 0 rows affected (0.11 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+mysql> INSERT INTO doctors(doctor_name, specialization,contact,consultation_fee)
+    -> VALUES ( 'Dr. Mehta', 'Cardiology','8964759122',800.00);
+Query OK, 1 row affected (0.01 sec)
+--------------------------------------------------------------------------------------------------------------
+-- UC-2.2: Assign/Update Doctor Specialty
+
+
+mysql> START TRANSACTION;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> UPDATE doctors
+    -> SET specialization = 'Neurology'
+    -> WHERE doctors_id = 1;
+ERROR 1054 (42S22): Unknown column 'doctors_id' in 'where clause'
+mysql> UPDATE doctors
+    -> set specialization = 'Neurology'
+    -> where doctor_id = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> commit;
+Query OK, 0 rows affected (0.00 sec)
+-----------------------------------------------------------------------------------------------------------------
+-- UC-2.3: View Doctors by Specialty
+mysql>  select doctor_name,
+    -> specialization,
+    -> consultation_fee
+    -> from doctors
+    -> where specialization = 'Cardiology'
+    -> and is_active = TRUE;
++-------------+----------------+------------------+
+| doctor_name | specialization | consultation_fee |
++-------------+----------------+------------------+
+| Dr. Mehta   | Cardiology     |           800.00 |
++-------------+----------------+------------------+
+1 row in set (0.00 sec)
+
+---------------------------------------------------------------------------------------------------------------
+
+-- UC-2.4: Deactivate Doctor Profile
+
+
+mysql> SELECT COUNT(*)
+    -> FROM appointments
+    -> WHERE doctor_id =1
+    -> and appointment_date >= CURDATE();
++----------+
+| COUNT(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.01 sec)
+
+mysql> UPDATE doctors
+    -> SET is_active = FALSE
+    -> WHERE doctor_id =1;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from doctors;
++-----------+-------------+----------------+------------+------------------+-----------+
+| doctor_id | doctor_name | specialization | contact    | consultation_fee | is_active |
++-----------+-------------+----------------+------------+------------------+-----------+
+|         1 | Dr. Mehta   | Neurology      | NULL       |             NULL |         0 |
+|         2 | Dr. Mehta   | Cardiology     | 8964759122 |           800.00 |         1 |
++-----------+-------------+----------------+------------+------------------+-----------+
+2 rows in set (0.00 sec)
+
+
+
