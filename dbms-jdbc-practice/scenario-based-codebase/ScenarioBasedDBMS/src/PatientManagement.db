@@ -1,0 +1,100 @@
+//1. Patient Management
+
+//UC-1.1: Register New Patient
+
+mysql> INSERT INTO patients(name, dob, phone, email, address, blood_group)
+    -> VALUES
+    -> ('Shyam','1997-02-12','8487647510','rahul123@gmail.com','Delhi','O+'),
+    -> ('Sanu','1997-08-12','8481147510','rahul23@gmail.com','Delhi','O+'),
+    -> ('Sk','1997-02-12','8487642310','sk@gmail.com','Delhi','A+');
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from patients;
++------------+-------+------------+------------+--------------------+---------+-------------+---------------------+
+| patient_id | name  | dob        | phone      | email              | address | blood_group | created_At          |
++------------+-------+------------+------------+--------------------+---------+-------------+---------------------+
+|         13 | Shyam | 1997-02-12 | 8487647510 | rahul123@gmail.com | Delhi   | O+          | 2026-02-09 15:52:34 |
+|         14 | Sanu  | 1997-08-12 | 8481147510 | rahul23@gmail.com  | Delhi   | O+          | 2026-02-09 15:52:34 |
+|         15 | Sk    | 1997-02-12 | 8487642310 | sk@gmail.com       | Delhi   | A+          | 2026-02-09 15:52:34 |
++------------+-------+------------+------------+--------------------+---------+-------------+---------------------+
+3 rows in set (0.01 sec)
+
+mysql>
+
+--------------------------------------------------------------------------------------------------------------
+
+// UC-1.2: Update Patient Information
+
+
+mysql> UPDATE patients
+    -> SET address = 'Bihar',
+    -> blood_group = 'AB-'
+    -> Where patient_id =14;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from patients;
++------------+-------+------------+------------+--------------------+---------+-------------+---------------------+
+| patient_id | name  | dob        | phone      | email              | address | blood_group | created_At          |
++------------+-------+------------+------------+--------------------+---------+-------------+---------------------+
+|         13 | Shyam | 1997-02-12 | 8487647510 | rahul123@gmail.com | Delhi   | O+          | 2026-02-09 15:52:34 |
+|         14 | Sanu  | 1997-08-12 | 8481147510 | rahul23@gmail.com  | Bihar   | AB-         | 2026-02-09 15:52:34 |
+|         15 | Sk    | 1997-02-12 | 8487642310 | sk@gmail.com       | Delhi   | A+          | 2026-02-09 15:52:34 |
++------------+-------+------------+------------+--------------------+---------+-------------+---------------------+
+3 rows in set (0.00 sec)
+
+mysql>
+------------------------------------------------------------------------------------------------------------------
+// UC-1.3: Search Patient Records
+
+
+mysql> select * from patients
+    -> Where patient_id =2 OR phone = '8487647510';
++------------+-------+------------+------------+--------------------+---------+-------------+---------------------+
+| patient_id | name  | dob        | phone      | email              | address | blood_group | created_At          |
++------------+-------+------------+------------+--------------------+---------+-------------+---------------------+
+|         13 | Shyam | 1997-02-12 | 8487647510 | rahul123@gmail.com | Delhi   | O+          | 2026-02-09 15:52:34 |
++------------+-------+------------+------------+--------------------+---------+-------------+---------------------+
+1 row in set (0.01 sec)
+
+mysql>
+
+---------------------------------------------------------------------------------------------------------------------
+
+//UC-1.4: View Patient Visit History
+To view Patient Visit History we are going to create three more tables doctors,appointments and visits
+
+
+
+
+mysql> INSERT INTO doctors(doctor_name, specialization)
+    -> VALUES ('Dr. Mehta', 'Cardiologist');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO appointments(patient_id, doctor_id, appointment_date)
+    -> VALUES (13, 1, '2026-02-09');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO visits(appointment_id, diagnosis, prescription)
+    -> VALUES (1, 'High BP', 'Medication A');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT a.appointment_date, d.doctor_name, v.diagnosis
+    -> FROM appointments a
+    -> LEFT JOIN doctors d ON a.doctor_id = d.doctor_id
+    -> LEFT JOIN visits v ON a.appointment_id = v.appointment_id
+    -> WHERE a.patient_id = 13;
++------------------+-------------+-----------+
+| appointment_date | doctor_name | diagnosis |
++------------------+-------------+-----------+
+| 2026-02-09       | Dr. Mehta   | High BP   |
++------------------+-------------+-----------+
+1 row in set (0.00 sec)
+
+mysql>
+
+
+
+
+
