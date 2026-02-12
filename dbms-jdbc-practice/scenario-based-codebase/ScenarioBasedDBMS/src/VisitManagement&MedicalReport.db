@@ -1,0 +1,113 @@
+
+
+4. Visit Management & Medical Records
+UC-4.1: Record Patient Visit
+Actor: Doctor
+Flow: After appointment completion, insert visit record into visits table with diagnosis, prescription, notes. Update appointment status to 'COMPLETED' in same transaction.
+
+UC-4.2: View Patient Medical History
+Actor: Doctor
+Flow: Execute JOIN query across visits, prescriptions, and appointments tables. Filter by patient_id and order by visit_date DESC for chronological view.
+
+UC-4.3: Add Prescription Details
+Actor: Doctor
+Flow: Insert multiple records into prescriptions table (one-to-many with visits) containing medicine name, dosage, duration. Use batch INSERT for efficiency.
+
+---------------------------------------------------------------------------------------------------------
+
+START TRANSACTION;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> INSERT INTO visits(appointment_id,diagnosis, prescription)
+    -> VALUES(1, 'fever and cold', 'paracetamol 500mg');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> UPDATE appointments
+    -> SET status = 'COMPLETED'
+    -> WHERE appointment_id = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> commit;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SELECT * FROM visits;
++----------+----------------+----------------+-------------------+
+| visit_id | appointment_id | diagnosis      | prescription      |
++----------+----------------+----------------+-------------------+
+|        1 |              1 | High BP        | Medication A      |
+|        2 |              1 | fever and cold | paracetamol 500mg |
++----------+----------------+----------------+-------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT appointment_id, status FROM appointments;
++----------------+-----------+
+| appointment_id | status    |
++----------------+-----------+
+|              1 | COMPLETED |
+|              3 | SCHEDULED |
++----------------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT a.appointment_date,
+    ->        d.doctor_name,
+    ->        v.diagnosis,
+    ->        v.prescription
+    -> FROM visits v
+    -> JOIN appointments a ON v.appointment_id = a.appointment_id
+    -> JOIN doctors d ON a.doctor_id = d.doctor_id
+    -> WHERE a.patient_id = 13
+    -> ORDER BY a.appointment_date DESC;
++------------------+-------------+----------------+-------------------+
+| appointment_date | doctor_name | diagnosis      | prescription      |
++------------------+-------------+----------------+-------------------+
+| 2026-02-09       | Dr. Mehta   | fever and cold | paracetamol 500mg |
+| 2026-02-09       | Dr. Mehta   | High BP        | Medication A      |
++------------------+-------------+----------------+-------------------+
+2 rows in set (0.01 sec)
+
+mysql> CREATE TABLE IF NOT EXISTS prescriptions (
+    ->     prescription_id INT PRIMARY KEY AUTO_INCREMENT,
+    ->     visit_id INT,
+    ->     medicine_name VARCHAR(100),
+    ->     dosage VARCHAR(50),
+    ->     duration VARCHAR(50),
+    ->     FOREIGN KEY (visit_id) REFERENCES visits(visit_id)
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> INSERT INTO prescriptions (visit_id, medicine_name, dosage, duration)
+    -> VALUES
+    -> (1, 'Paracetamol', '500mg', '5 days'),
+    -> (1, 'Vitamin C', '1 tablet', '7 days');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> SELECT a.appointment_date,
+    ->        d.doctor_name,
+    ->        v.diagnosis,
+    ->        p.medicine_name,
+    ->        p.dosage,
+    ->        p.duration
+    -> FROM visits v
+    -> JOIN appointments a ON v.appointment_id = a.appointment_id
+    -> JOIN doctors d ON a.doctor_id = d.doctor_id
+    -> LEFT JOIN prescriptions p ON v.visit_id = p.visit_id
+    -> WHERE a.patient_id = 13
+    -> ORDER BY a.appointment_date DESC;
++------------------+-------------+----------------+---------------+----------+----------+
+| appointment_date | doctor_name | diagnosis      | medicine_name | dosage   | duration |
++------------------+-------------+----------------+---------------+----------+----------+
+| 2026-02-09       | Dr. Mehta   | High BP        | Paracetamol   | 500mg    | 5 days   |
+| 2026-02-09       | Dr. Mehta   | High BP        | Vitamin C     | 1 tablet | 7 days   |
+| 2026-02-09       | Dr. Mehta   | fever and cold | NULL          | NULL     | NULL     |
++------------------+-------------+----------------+---------------+----------+----------+
+3 rows in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+
