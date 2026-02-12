@@ -1,0 +1,157 @@
+/*5. Billing & Payments
+UC-5.1: Generate Bill for Visit
+Actor: Receptionist
+Flow: Calculate total from doctor's consultation_fee plus any additional charges. Insert into bills table with foreign key to visit_id. Use SUM aggregate function for itemized billing.
+
+UC-5.2: Record Payment
+Actor: Receptionist
+Flow: Update bills table setting payment_status='PAID', payment_date, payment_mode. Use transaction to insert record in payment_transactions table simultaneously.
+
+UC-5.3: View Outstanding Bills
+Actor: Receptionist/Administrator
+Flow: SELECT from bills table WHERE payment_status='UNPAID' with JOIN to patients. Use aggregate functions (SUM, COUNT) grouped by patient for summary.
+
+UC-5.4: Generate Revenue Report
+Actor: Administrator
+Flow: Execute aggregate query with SUM on bills table grouped by date/doctor/specialty. Use BETWEEN operator for date range filtering and HAVING clause for thresholds.
+*/
+
+-------------------------------------------------------------------------------------------------------------
+mysql> CREATE TABLE IF NOT EXISTS bills (
+    ->     bill_id INT PRIMARY KEY AUTO_INCREMENT,
+    ->     visit_id INT,
+    ->     total_amount DECIMAL(10,2),
+    ->     payment_status VARCHAR(20) DEFAULT 'UNPAID',
+    ->     bill_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ->     payment_date TIMESTAMP NULL,
+    ->     payment_mode VARCHAR(30) NULL,
+    ->     FOREIGN KEY (visit_id) REFERENCES visits(visit_id)
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> CREATE TABLE IF NOT EXISTS payment_transactions (
+    ->     transaction_id INT PRIMARY KEY AUTO_INCREMENT,
+    ->     bill_id INT,
+    ->     amount DECIMAL(10,2),
+    ->     payment_mode VARCHAR(30),
+    ->     transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ->     FOREIGN KEY (bill_id) REFERENCES bills(bill_id)
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> SELECT d.consultation_fee + 200 AS total_bill
+    -> FROM doctors d
+    -> JOIN appointments a ON d.doctor_id = a.doctor_id
+    -> JOIN visits v ON a.appointment_id = v.appointment_id
+    -> WHERE v.visit_id = 1;
++------------+
+| total_bill |
++------------+
+|       NULL |
++------------+
+1 row in set (0.01 sec)
+
+mysql> INSERT INTO bills (visit_id, total_amount)
+    -> SELECT v.visit_id,
+    ->        d.consultation_fee + 200
+    -> FROM doctors d
+    -> JOIN appointments a ON d.doctor_id = a.doctor_id
+    -> JOIN visits v ON a.appointment_id = v.appointment_id
+    -> WHERE v.visit_id = 1;
+Query OK, 1 row affected (0.01 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM bills;
++---------+----------+--------------+----------------+---------------------+--------------+--------------+
+| bill_id | visit_id | total_amount | payment_status | bill_date           | payment_date | payment_mode |
++---------+----------+--------------+----------------+---------------------+--------------+--------------+
+|       1 |        1 |         NULL | UNPAID         | 2026-02-12 13:01:19 | NULL         | NULL         |
++---------+----------+--------------+----------------+---------------------+--------------+--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM bills;
++---------+----------+--------------+----------------+---------------------+--------------+--------------+
+| bill_id | visit_id | total_amount | payment_status | bill_date           | payment_date | payment_mode |
++---------+----------+--------------+----------------+---------------------+--------------+--------------+
+|       1 |        1 |         NULL | UNPAID         | 2026-02-12 13:01:19 | NULL         | NULL         |
++---------+----------+--------------+----------------+---------------------+--------------+--------------+
+1 row in set (0.00 sec)
+
+mysql> START TRANSACTION;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> -- Update bill status
+mysql> UPDATE bills
+    -> SET payment_status = 'PAID',
+    ->     payment_date = NOW(),
+    ->     payment_mode = 'UPI'
+    -> WHERE bill_id = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>
+mysql> -- Insert payment audit
+mysql> INSERT INTO payment_transactions (bill_id, amount, payment_mode)
+    -> SELECT bill_id, total_amount, 'UPI'
+    -> FROM bills
+    -> WHERE bill_id = 1;
+Query OK, 1 row affected (0.00 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql> COMMIT;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SELECT * FROM bills;
++---------+----------+--------------+----------------+---------------------+---------------------+--------------+
+| bill_id | visit_id | total_amount | payment_status | bill_date           | payment_date        | payment_mode |
++---------+----------+--------------+----------------+---------------------+---------------------+--------------+
+|       1 |        1 |         NULL | PAID           | 2026-02-12 13:01:19 | 2026-02-12 13:01:43 | UPI          |
++---------+----------+--------------+----------------+---------------------+---------------------+--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM payment_transactions;
++----------------+---------+--------+--------------+---------------------+
+| transaction_id | bill_id | amount | payment_mode | transaction_date    |
++----------------+---------+--------+--------------+---------------------+
+|              1 |       1 |   NULL | UPI          | 2026-02-12 13:01:43 |
++----------------+---------+--------+--------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT p.name AS patient_name,
+    ->        COUNT(b.bill_id) AS pending_bills,
+    ->        SUM(b.total_amount) AS total_due
+    -> FROM bills b
+    -> JOIN visits v ON b.visit_id = v.visit_id
+    -> JOIN appointments a ON v.appointment_id = a.appointment_id
+    -> JOIN patients p ON a.patient_id = p.patient_id
+    -> WHERE b.payment_status = 'UNPAID'
+    -> GROUP BY p.name;
+Empty set (0.00 sec)
+
+mysql> SELECT DATE(b.bill_date) AS bill_day,
+    ->        SUM(b.total_amount) AS daily_revenue
+    -> FROM bills b
+    -> WHERE b.payment_status = 'PAID'
+    -> AND b.bill_date BETWEEN '2026-02-01' AND '2026-02-28'
+    -> GROUP BY DATE(b.bill_date)
+    -> HAVING SUM(b.total_amount) > 0;
+Empty set (0.00 sec)
+
+mysql> SELECT d.doctor_name,
+    ->        SUM(b.total_amount) AS revenue_generated
+    -> FROM bills b
+    -> JOIN visits v ON b.visit_id = v.visit_id
+    -> JOIN appointments a ON v.appointment_id = a.appointment_id
+    -> JOIN doctors d ON a.doctor_id = d.doctor_id
+    -> WHERE b.payment_status = 'PAID'
+    -> GROUP BY d.doctor_name;
++-------------+-------------------+
+| doctor_name | revenue_generated |
++-------------+-------------------+
+| Dr. Mehta   |              NULL |
++-------------+-------------------+
+1 row in set (0.00 sec)
+
+mysql>
