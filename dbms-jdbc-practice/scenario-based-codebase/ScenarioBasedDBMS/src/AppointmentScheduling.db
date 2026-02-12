@@ -1,0 +1,174 @@
+/*-- UC-3.1: Book New Appointment
+Actor: Receptionist
+Flow: Select patient and doctor, check availability using SELECT with date/time constraints. Insert into appointments table with status='SCHEDULED'. Use PreparedStatement to prevent SQL injection.
+
+UC-3.2: Check Doctor Availability
+Actor: Receptionist
+Flow: Query appointments table with WHERE clause for doctor_id and date. Use GROUP BY and COUNT to show slot-wise bookings against max capacity.
+
+UC-3.3: Cancel Appointment
+Actor: Receptionist/Patient
+Flow: Update appointment status to 'CANCELLED' using UPDATE statement. Execute within transaction to log cancellation in appointment_audit table.
+
+UC-3.4: Reschedule Appointment
+Actor: Receptionist
+Flow: Verify new slot availability, update appointment date/time and doctor_id if needed. Use transaction with ROLLBACK capability if conflicts detected.
+
+UC-3.5: View Daily Appointment Schedule
+Actor: Doctor/Receptionist
+Flow: Execute multi-table JOIN (appointments, patients, doctors) filtered by date. Order by appointment_time using ORDER BY clause.
+*/
+
+-----------------------------------------------------------------------------------------------------------------------------------
+mysql> SELECT patient_id, name FROM patients;
++------------+-------+
+| patient_id | name  |
++------------+-------+
+|         13 | Shyam |
+|         14 | Sanu  |
+|         15 | Sk    |
++------------+-------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT doctor_id, doctor_name FROM doctors;
++-----------+-------------+
+| doctor_id | doctor_name |
++-----------+-------------+
+|         1 | Dr. Mehta   |
+|         2 | Dr. Mehta   |
++-----------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT COUNT(*)
+    -> FROM appointments
+    -> WHERE doctor_id = 1
+    -> AND appointment_date = '2026-02-16'
+    -> AND appointment_time = '11:00:00'
+    -> AND status = 'SCHEDULED';
++----------+
+| COUNT(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO appointments
+    -> (patient_id, doctor_id, appointment_date, appointment_time, status)
+    -> VALUES
+    -> (13, 1, '2026-02-16', '11:00:00', 'SCHEDULED');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM appointments;
++----------------+------------+-----------+------------------+------------------+-----------+
+| appointment_id | patient_id | doctor_id | appointment_date | appointment_time | status    |
++----------------+------------+-----------+------------------+------------------+-----------+
+|              1 |         13 |         1 | 2026-02-09       | NULL             | CANCELLED |
+|              3 |         13 |         1 | 2026-02-16       | 11:00:00         | SCHEDULED |
++----------------+------------+-----------+------------------+------------------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT appointment_time,
+    ->        COUNT(*) AS booked_slots
+    -> FROM appointments
+    -> WHERE doctor_id = 1
+    -> AND appointment_date = '2026-02-16'
+    -> AND status = 'SCHEDULED'
+    -> GROUP BY appointment_time;
++------------------+--------------+
+| appointment_time | booked_slots |
++------------------+--------------+
+| 11:00:00         |            1 |
++------------------+--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT appointment_id FROM appointments;
++----------------+
+| appointment_id |
++----------------+
+|              1 |
+|              3 |
++----------------+
+2 rows in set (0.00 sec)
+
+mysql> START TRANSACTION;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> UPDATE appointments
+    -> SET status = 'CANCELLED'
+    -> WHERE appointment_id = 3;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> INSERT INTO appointment_audit (appointment_id, action)
+    -> VALUES (3, 'CANCELLED');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SELECT * FROM appointments;
++----------------+------------+-----------+------------------+------------------+-----------+
+| appointment_id | patient_id | doctor_id | appointment_date | appointment_time | status    |
++----------------+------------+-----------+------------------+------------------+-----------+
+|              1 |         13 |         1 | 2026-02-09       | NULL             | CANCELLED |
+|              3 |         13 |         1 | 2026-02-16       | 11:00:00         | CANCELLED |
++----------------+------------+-----------+------------------+------------------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM appointment_audit;
++----------+----------------+-----------+---------------------+
+| audit_id | appointment_id | action    | action_time         |
++----------+----------------+-----------+---------------------+
+|        3 |              3 | CANCELLED | 2026-02-12 12:18:05 |
++----------+----------------+-----------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> START TRANSACTION;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> UPDATE appointments
+    -> SET appointment_date = '2026-02-17',
+    ->     appointment_time = '12:00:00',
+    ->     status = 'SCHEDULED'
+    -> WHERE appointment_id = 3;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> commit;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SELECT * FROM appointments;
++----------------+------------+-----------+------------------+------------------+-----------+
+| appointment_id | patient_id | doctor_id | appointment_date | appointment_time | status    |
++----------------+------------+-----------+------------------+------------------+-----------+
+|              1 |         13 |         1 | 2026-02-09       | NULL             | CANCELLED |
+|              3 |         13 |         1 | 2026-02-17       | 12:00:00         | SCHEDULED |
++----------------+------------+-----------+------------------+------------------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT a.appointment_time,
+    ->        p.name AS patient_name,
+    ->        d.doctor_name,
+    ->        a.status
+    -> FROM appointments a
+    -> JOIN patients p ON a.patient_id = p.patient_id
+    -> JOIN doctors d ON a.doctor_id = d.doctor_id
+    -> WHERE a.appointment_date = '2026-02-17'
+    -> ORDER BY a.appointment_time;
++------------------+--------------+-------------+-----------+
+| appointment_time | patient_name | doctor_name | status    |
++------------------+--------------+-------------+-----------+
+| 12:00:00         | Shyam        | Dr. Mehta   | SCHEDULED |
++------------------+--------------+-------------+-----------+
+1 row in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+
+
